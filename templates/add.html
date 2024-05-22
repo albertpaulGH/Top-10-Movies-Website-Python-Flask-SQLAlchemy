@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% from "bootstrap5/form.html" import render_form %}
+{% block title %}Add Movie{% endblock %}
+
+{% block content %}
+<div class="content pt-5">
+    <h1 class="heading">Add a Movie</h1>
+    {% if flag %}
+    {{ render_form(form, novalidate=True) }}
+    {% else %}
+    <h2>{{ status }}</h2>
+    <div class="content center" ><a href="{{ url_for('home') }}">Home</a></div>
+    {%  endif %}
+</div>
+{% endblock %}
